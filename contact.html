@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - السياحة في مصر</title>
+    <meta name="description" content="تواصل مع الهيئة العامة للسياحة في مصر للاستفسارات والحجوزات">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #079992;
+            --accent: #e58e26;
+            --light: #f5f6fa;
+            --dark: #1e272e;
+            --text: #2f3640;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.19);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f6b93b, #fad390);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url('wave-pattern.png') repeat-x;
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-title i {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-details i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .contact-details a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(7, 153, 146, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .branches {
+            margin-top: 4rem;
+        }
+
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .branch-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .branch-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .branch-title i {
+            color: var(--accent);
+        }
+
+        .branch-details {
+            list-style: none;
+        }
+
+        .branch-details li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .branch-details i {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-top: 3px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .main-footer {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 3rem 1rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .footer-link i {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero {
+                height: 35vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .branches-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-wrapper">
+            <img src="school-logo.png" alt="شعار السياحة المصرية" class="logo">
+            <h1 class="site-title">السياحة في مصر</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                الرئيسية
+            </a>
+            <a href="contact.html" class="nav-link active">
+                <i class="fas fa-envelope"></i>
+                اتصل بنا
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">اتصل بنا</h1>
+        <p class="hero-subtitle">نحن هنا لمساعدتك في التخطيط لرحلتك المثالية إلى مصر</p>
+    </section>
+
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">تواصل مع الهيئة العامة للسياحة</h2>
+            <p class="section-description">يسعدنا مساعدتك في جميع استفساراتك السياحية وحجوزاتك</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 class="contact-title"><i class="fas fa-headset"></i> مركز الاتصالات</h3>
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>رقم الهاتف الموحد:</strong>
+                            <p><a href="tel:19654">19654</a> (من داخل مصر)</p>
+                            <p><a href="tel:+20222616040">+202 2261 6040</a> (من خارج مصر)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>البريد الإلكتروني:</strong>
+                            <p><a href="mailto:info@egypt.travel">info@egypt.travel</a></p>
+                            <p><a href="mailto:support@egypt.travel">support@egypt.travel</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>ساعات العمل:</strong>
+                            <p>يومياً من 8 صباحاً حتى 10 مساءً</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <strong>اللغات المتاحة:</strong>
+                            <p>العربية، الإنجليزية، الفرنسية، الألمانية، الإسبانية</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h3 class="contact-title" style="margin-top: 2rem;"><i class="fas fa-map-marker-alt"></i> المقر الرئيسي</h3>
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <strong>العنوان:</strong>
+                            <p>3 شارع العدل، منطقة الدقي، الجيزة، مصر</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="contact-form">
+                <h3 class="contact-title"><i class="fas fa-paper-plane"></i> أرسل استفسارك</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">رقم الهاتف</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="form-label">البلد</label>
+                        <input type="text" id="country" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">نوع الاستفسار</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="" selected disabled>اختر نوع الاستفسار</option>
+                            <option value="general">استفسار عام</option>
+                            <option value="visa">تأشيرات الدخول</option>
+                            <option value="tours">الجولات السياحية</option>
+                            <option value="hotels">الحجوزات الفندقية</option>
+                            <option value="complaint">شكوى أو اقتراح</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">الرسالة</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-block">إرسال الاستفسار</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.658239414242!2d31.2132153151152!3d30.04492398187701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458474a1c85f3a1%3A0x8e9a1b9b5d5b5b5d!2sMinistry%20of%20Tourism%20and%20Antiquities!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <div class="branches">
+            <div class="section-header">
+                <h2 class="section-title">فروعنا في مصر</h2>
+                <p class="section-description">يمكنك زيارة أي من مكاتبنا المنتشرة في جميع أنحاء مصر</p>
+            </div>
+            
+            <div class="branches-grid">
+                <div class="branch-card">
+                    <h3 class="branch-title"><i class="fas fa-city"></i> القاهرة</h3>
+                    <ul class="branch-details">
+                        <li><i class="fas fa-map-marker-alt"></i> 5 شارع عدلي، وسط البلد</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20223921999">02 2392 1999</a></li>
+                        <li><i class="fas fa-clock"></i> من السبت إلى الخميس 9ص-5م</li>
+                    </ul>
+                </div>
+                
+                <div class="branch-card">
+                    <h3 class="branch-title"><i class="fas fa-umbrella-beach"></i> الغردقة</h3>
+                    <ul class="branch-details">
+                        <li><i class="fas fa-map-marker-alt"></i> شارع البحر، منطقة السوق</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20653480100">065 348 0100</a></li>
+                        <li><i class="fas fa-clock"></i> يومياً 9ص-9م</li>
+                    </ul>
+                </div>
+                
+                <div class="branch-card">
+                    <h3 class="branch-title"><i class="fas fa-monument"></i> الأقصر</h3>
+                    <ul class="branch-details">
+                        <li><i class="fas fa-map-marker-alt"></i> كورنيش النيل، أمام معبد الأقصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20952362222">095 236 2222</a></li>
+                        <li><i class="fas fa-clock"></i> يومياً 8ص-8م</li>
+                    </ul>
+                </div>
+                
+                <div class="branch-card">
+                    <h3 class="branch-title"><i class="fas fa-ship"></i> الإسكندرية</h3>
+                    <ul class="branch-details">
+                        <li><i class="fas fa-map-marker-alt"></i> 22 شارع سعد زغلول، المنشية</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+2034871333">03 487 1333</a></li>
+                        <li><i class="fas fa-clock"></i> من السبت إلى الخميس 9ص-4م</li>
+                    </ul>
+                </div>
+                
+                <div class="branch-card">
+                    <h3 class="branch-title"><i class="fas fa-camera"></i> أسوان</h3>
+                    <ul class="branch-details">
+                        <li><i class="fas fa-map-marker-alt"></i> كورنيش النيل، بجوار فندق كتراكت</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20972304444">097 230 4444</a></li>
+                        <li><i class="fas fa-clock"></i> يومياً 8ص-8م</li>
+                    </ul>
+                </div>
+                
+                <div class="branch-card">
+                    <h3 class="branch-title"><i class="fas fa-crown"></i> شرم الشيخ</h3>
+                    <ul class="branch-details">
+                        <li><i class="fas fa-map-marker-alt"></i> سوق الشيخ، منطقة نايس باي</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20693602222">069 360 2222</a></li>
+                        <li><i class="fas fa-clock"></i> يومياً 9ص-11م</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>عن الهيئة</h3>
+                <p>الهيئة العامة للتنشيط السياحي تهدف إلى الترويج لمقومات مصر السياحية عالمياً وتقديم الدعم للزوار.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-map-marked-alt"></i> الوجهات السياحية</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-passport"></i> تأشيرات الدخول</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-calendar-alt"></i> الفعاليات</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>خدمات الزوار</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link"><i class="fas fa-bus"></i> المواصلات</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-user-tie"></i> المرشدين السياحيين</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-shield-alt"></i> نصائح الأمان</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>تواصل معنا</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:19654" class="footer-link"><i class="fas fa-phone"></i> 19654</a></li>
+                    <li><a href="mailto:info@egypt.travel" class="footer-link"><i class="fas fa-envelope"></i> info@egypt.travel</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-map-marker-alt"></i> المقر الرئيسي</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-headset"></i> الشكاوى والاقتراحات</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 الهيئة العامة للتنشيط السياحي - مصر. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // تأثير الظهور التدريجي للأقسام
+            const sections = document.querySelectorAll("section");
+            const fadeInSections = function() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (sectionTop < windowHeight - 100) {
+                        section.style.opacity = "1";
+                        section.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            // تشغيل التأثير عند التحميل وعند التمرير
+            fadeInSections();
+            window.addEventListener("scroll", fadeInSections);
+            
+            // زر العودة للأعلى
+            const backToTopButton = document.querySelector(".back-to-top");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("visible");
+                } else {
+                    backToTopButton.classList.remove("visible");
+                }
+            });
+            
+            backToTopButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+            
+            // إرسال النموذج
+            const contactForm = document.getElementById("contactForm");
+            if (contactForm) {
+                contactForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    alert("شكراً لتواصلكم مع الهيئة العامة للسياحة! سنقوم بالرد على استفساركم في أقرب وقت ممكن.");
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

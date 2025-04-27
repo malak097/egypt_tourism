@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جنوب سيناء - أرض المغامرات والشواطئ الساحرة | مصر كما لم ترها من قبل</title>
+    <meta name="description" content="اكتشف جمال جنوب سيناء من شرم الشيخ إلى سانت كاترين، دليل شامل لأهم المعالم السياحية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #079992;
+            --accent: #e58e26;
+            --light: #f5f6fa;
+            --dark: #1e272e;
+            --text: #2f3640;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.19);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر المعدل */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f6b93b, #fad390);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* هيرو سيكشن خاص بجنوب سيناء */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('جنوب سيناء.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url('wave-pattern.png') repeat-x;
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* قسم المحتوى الرئيسي */
+        .content-section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* معرض الصور المعدل */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .gallery-gps {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-gps a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .gallery-gps i {
+            font-size: 0.8rem;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* الفوتر */
+        .main-footer {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 3rem 1rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .footer-link i {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* تأثيرات الحركة */
+        @media (hover: none) {
+            .gallery-item:hover {
+                transform: none;
+            }
+            
+            .gallery-content {
+                transform: translateY(0);
+                background: rgba(0,0,0,0.7);
+            }
+        }
+
+        /* التجاوب مع الشاشات */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-content {
+                padding: 1rem;
+            }
+            
+            .gallery-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-wrapper">
+            <img src="school-logo.png" alt="شعار المدرسة" class="logo">
+            <h1 class="site-title">جنوب سيناء - أرض المغامرات والشواطئ الساحرة</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                الرئيسية
+            </a>
+            <a href="#gallery" class="nav-link">
+                <i class="fas fa-images"></i>
+                المعالم
+            </a>
+            <a href="#about" class="nav-link">
+                <i class="fas fa-info-circle"></i>
+                عن جنوب سيناء
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">جنوب سيناء</h1>
+        <p class="hero-subtitle">حيث تلتقي الجبال الشامخة بالبحر الفيروزي في لوحة طبيعية أخاذة</p>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">عن جنوب سيناء</h2>
+            <p class="section-description">جوهرة السياحة المصرية حيث التاريخ والطبيعة والمغامرة</p>
+        </div>
+        
+        <div class="about-content">
+            <p>تعتبر محافظة جنوب سيناء من أهم الوجهات السياحية في مصر والعالم، حيث تجمع بين التاريخ العريق والطبيعة الساحرة والرياضات المثيرة. تضم المحافظة مدنًا سياحية عالمية مثل شرم الشيخ ودهب ونويبع وطابا، بالإضافة إلى مواقع دينية وتاريخية مهمة مثل دير سانت كاترين وجبل موسى. تتمتع المحافظة بمناخ معتدل طوال العام وشواطئ خلابة تطل على البحر الأحمر الذي يعد من أفضل مواقع الغوص في العالم.</p>
+            <br>
+            <p>تشتهر جنوب سيناء بتنوعها البيئي الفريد، حيث تضم عدة محميات طبيعية مثل محمية رأس محمد ومحمية نبق ومحمية أبو جالوم، والتي تحوي أنظمة بيئية متنوعة تشمل الشعاب المرجانية والنباتات النادرة والحياة البرية الفريدة. كما تقدم المحافظة فرصًا رائعة لممارسة الرياضات المائية مثل الغوص والسنوركلينج والإبحار، بالإضافة إلى رياضات الصحراء مثل رحلات السفاري والتخييم تحت النجوم.</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">معالم جنوب سيناء</h2>
+            <p class="section-description">اكتشف أهم المواقع السياحية والتاريخية في جوهرة السياحة المصرية</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- دير سانت كاترين -->
+            <div class="gallery-item">
+                <img src="دير سانت كاترين.jpeg" alt="دير سانت كاترين" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">دير سانت كاترين</h3>
+                    <p class="gallery-description">من أقدم الأديرة في العالم، يضم مكتبة ومخطوطات نادرة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=28.5557,33.9750" target="_blank">28.5557°N, 33.9750°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- جبل موسى -->
+            <div class="gallery-item">
+                <img src="جبل موسى.jpg" alt="جبل موسى" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">جبل موسى</h3>
+                    <p class="gallery-description">وجهة شهيرة لممارسة رياضة التسلق والاستمتاع بمشهد الشروق</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=28.5394,33.9763" target="_blank">28.5394°N, 33.9763°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- قلعة صلاح الدين -->
+            <div class="gallery-item">
+                <img src="قلعة صلاح الدين (جزيرة فرعون - طابا).webp" alt="قلعة صلاح الدين" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">قلعة صلاح الدين</h3>
+                    <p class="gallery-description">قلعة أثرية بناها صلاح الدين الأيوبي على جزيرة فرعون</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.4891,34.8616" target="_blank">29.4891°N, 34.8616°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- وادي فيران -->
+            <div class="gallery-item">
+                <img src="وادي فيران.jpg" alt="وادي فيران" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">وادي فيران</h3>
+                    <p class="gallery-description">من أقدم المواقع المسيحية في سيناء، يضم آثارًا تاريخية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=28.7125,33.3667" target="_blank">28.7125°N, 33.3667°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- مسجد الصحابة -->
+            <div class="gallery-item">
+                <img src="مسجد الصحابة (شرم الشيخ).jpg" alt="مسجد الصحابة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">مسجد الصحابة</h3>
+                    <p class="gallery-description">تحفة معمارية تجمع بين الطراز الإسلامي الفاطمي والعثماني</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=27.9158,34.3296" target="_blank">27.9158°N, 34.3296°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- محمية رأس محمد -->
+            <div class="gallery-item">
+                <img src="محمية رأس محمد.jpg" alt="محمية رأس محمد" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">محمية رأس محمد</h3>
+                    <p class="gallery-description">واحدة من أجمل المحميات الطبيعية في العالم</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=27.7237,34.2614" target="_blank">27.7237°N, 34.2614°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- محمية نبق -->
+            <div class="gallery-item">
+                <img src="محمية نبق.jpg" alt="محمية نبق" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">محمية نبق</h3>
+                    <p class="gallery-description">منطقة طبيعية ساحرة تضم نباتات المانجروف والكائنات البحرية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=28.0786,34.4322" target="_blank">28.0786°N, 34.4322°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- بلو هول -->
+            <div class="gallery-item">
+                <img src="بلو هول (دهب).jpg" alt="بلو هول" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">بلو هول</h3>
+                    <p class="gallery-description">أشهر مواقع الغوص في العالم، يجذب الغواصين من كل مكان</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=28.5712,34.5362" target="_blank">28.5712°N, 34.5362°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- خليج نعمة -->
+            <div class="gallery-item">
+                <img src="خليج نعمة (شرم الشيخ).jpg" alt="خليج نعمة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">خليج نعمة</h3>
+                    <p class="gallery-description">منطقة سياحية حيوية تضم شواطئ رائعة ومراكز ترفيهية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=27.9128,34.3267" target="_blank">27.9128°N, 34.3267°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- رأس شيطان -->
+            <div class="gallery-item">
+                <img src="رأس شيطان (نويبع).jpg" alt="رأس شيطان" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">رأس شيطان</h3>
+                    <p class="gallery-description">وجهة مميزة لعشاق الاستجمام والتخييم بين الجبال والبحر</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.0346,34.6989" target="_blank">29.0346°N, 34.6989°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- بحيرة الملح -->
+            <div class="gallery-item">
+                <img src="بحيرة الملح (رأس سدر).jpg" alt="بحيرة الملح" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">بحيرة الملح</h3>
+                    <p class="gallery-description">بحيرة علاجية ذات مياه مالحة تستخدم في العلاجات الطبيعية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.5850,32.7175" target="_blank">29.5850°N, 32.7175°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- السوق القديم -->
+            <div class="gallery-item">
+                <img src="السوق القديم (شرم الشيخ).jpg" alt="السوق القديم" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">السوق القديم</h3>
+                    <p class="gallery-description">سوق سياحي يضم محلات تبيع المنتجات المحلية والهدايا</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=27.9152,34.3293" target="_blank">27.9152°N, 34.3293°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- المدينة القديمة في دهب -->
+            <div class="gallery-item">
+                <img src="المدينة القديمة في دهب.jpg" alt="المدينة القديمة في دهب" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">المدينة القديمة في دهب</h3>
+                    <p class="gallery-description">منطقة نابضة بالحياة تضم مطاعم ومقاهي على الطراز البدوي</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=28.4956,34.5136" target="_blank">28.4956°N, 34.5136°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- ممشى خليج نعمة -->
+            <div class="gallery-item">
+                <img src="ممشى خليج نعمة.jpg" alt="ممشى خليج نعمة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">ممشى خليج نعمة</h3>
+                    <p class="gallery-description">ممشى سياحي يعج بالمطاعم والمقاهي وأماكن الترفيه</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=27.9142,34.3261" target="_blank">27.9142°N, 34.3261°E</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>عن المشروع</h3>
+                <p>مبادرة تعليمية تهدف إلى تعريف الطلاب بجمال وتاريخ مصر من خلال وسائل تعليمية تفاعلية.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#about" class="footer-link"><i class="fas fa-info-circle"></i> عن جنوب سيناء</a></li>
+                    <li><a href="#gallery" class="footer-link"><i class="fas fa-images"></i> معالم جنوب سيناء</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>معلومات الاتصال</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@discover-egypt.com" class="footer-link"><i class="fas fa-envelope"></i> info@discover-egypt.com</a></li>
+                    <li><a href="tel:+20123456789" class="footer-link"><i class="fas fa-phone"></i> 0123456789</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-map-marker-alt"></i> شرم الشيخ، مصر</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 مدرسة محمد رجب. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // تأثير الظهور التدريجي للأقسام
+            const sections = document.querySelectorAll("section");
+            const fadeInSections = function() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (sectionTop < windowHeight - 100) {
+                        section.style.opacity = "1";
+                        section.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            // تشغيل التأثير عند التحميل وعند التمرير
+            fadeInSections();
+            window.addEventListener("scroll", fadeInSections);
+            
+            // زر العودة للأعلى
+            const backToTopButton = document.querySelector(".back-to-top");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("visible");
+                } else {
+                    backToTopButton.classList.remove("visible");
+                }
+            });
+            
+            backToTopButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+            
+            // تحميل الصور عند الظهور في الشاشة
+            if ('IntersectionObserver' in window) {
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.removeAttribute('loading');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+    </script>
+</body>
+</html>

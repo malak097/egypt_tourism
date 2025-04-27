@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفيوم - لؤلؤة واحة مصر | مصر كما لم ترها من قبل</title>
+    <meta name="description" content="اكتشف جمال الفيوم من بحيرة قارون إلى وادي الحيتان، دليل شامل لأهم المعالم السياحية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #079992;
+            --accent: #e58e26;
+            --light: #f5f6fa;
+            --dark: #1e272e;
+            --text: #2f3640;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.19);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر المعدل */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f6b93b, #fad390);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* هيرو سيكشن خاص بالفيوم */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('الفيوم.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url('wave-pattern.png') repeat-x;
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* قسم المحتوى الرئيسي */
+        .content-section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* معرض الصور المعدل */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .gallery-gps {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-gps a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .gallery-gps i {
+            font-size: 0.8rem;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* الفوتر */
+        .main-footer {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 3rem 1rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .footer-link i {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* تأثيرات الحركة */
+        @media (hover: none) {
+            .gallery-item:hover {
+                transform: none;
+            }
+            
+            .gallery-content {
+                transform: translateY(0);
+                background: rgba(0,0,0,0.7);
+            }
+        }
+
+        /* التجاوب مع الشاشات */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-content {
+                padding: 1rem;
+            }
+            
+            .gallery-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-wrapper">
+            <img src="school-logo.png" alt="شعار المدرسة" class="logo">
+            <h1 class="site-title">الفيوم - لؤلؤة واحة مصر</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                الرئيسية
+            </a>
+            <a href="#gallery" class="nav-link">
+                <i class="fas fa-images"></i>
+                المعالم
+            </a>
+            <a href="#about" class="nav-link">
+                <i class="fas fa-info-circle"></i>
+                عن الفيوم
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">الفيوم</h1>
+        <p class="hero-subtitle">حيث تتعانق الطبيعة والتاريخ فتجمع واحات النخيل مع بحيرة قارون وسحر الشلالات</p>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">عن الفيوم</h2>
+            <p class="section-description">واحة مصرية فريدة تجمع بين التاريخ العريق والطبيعة الساحرة</p>
+        </div>
+        
+        <div class="about-content">
+            <p>تعد الفيوم واحدة من أكثر المحافظات المصرية تميزاً، حيث تجمع بين الطبيعة الخلابة والتاريخ العريق. تشتهر الفيوم ببحيرة قارون التي تعد من أقدم البحيرات الطبيعية في العالم، بالإضافة إلى واحات النخيل الكثيفة وقنوات المياه التي تعود إلى العصور الفرعونية. كانت الفيوم تعرف في العصر الفرعوني باسم "با-سوبك" أي دار التمساح، حيث كان الإله سوبك (الإله التمساح) معبوداً رئيسياً في المنطقة.</p>
+            <br>
+            <p>تضم الفيوم العديد من المواقع الأثرية المهمة مثل وادي الحيتان الذي أدرجته اليونسكو ضمن مواقع التراث العالمي، وهرم هوارة، ومعابد مدينة ماضي الأثرية. كما تشتهر الفيوم بالطبيعة الخلابة في وادي الريان الذي يضم شلالات وبحيرات صغيرة، مما يجعلها وجهة مثالية لمحبي الطبيعة والتاريخ معاً.</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">معالم الفيوم</h2>
+            <p class="section-description">اكتشف أهم المواقع السياحية والأثرية في محافظة الفيوم</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- بحيرة قارون -->
+            <div class="gallery-item">
+                <img src="بحيرة قارون.jpg" alt="بحيرة قارون" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">بحيرة قارون</h3>
+                    <p class="gallery-description">واحدة من أقدم البحيرات الطبيعية في العالم، موطن للعديد من الطيور النادرة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.4667,30.6333" target="_blank">29.4667°N, 30.6333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- وادي الحيتان -->
+            <div class="gallery-item">
+                <img src="وادي الحيتان.jpg" alt="وادي الحيتان" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">وادي الحيتان</h3>
+                    <p class="gallery-description">موقع أثري عالمي يحتوي على حفريات لهياكل حيتان متحجرة عمرها ملايين السنين</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.2667,30.0333" target="_blank">29.2667°N, 30.0333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- وادي الريان -->
+            <div class="gallery-item">
+                <img src="وادي الريان.jpg" alt="وادي الريان" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">وادي الريان</h3>
+                    <p class="gallery-description">محمية طبيعية تضم بحيرتين متصلتين وشلالات جميلة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.2000,30.3500" target="_blank">29.2000°N, 30.3500°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- جبل المدورة -->
+            <div class="gallery-item">
+                <img src="جبل المدورة.jpg" alt="جبل المدورة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">جبل المدورة</h3>
+                    <p class="gallery-description">تكوين صخري طبيعي يوفر إطلالة رائعة على وادي الريان</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.2000,30.3500" target="_blank">29.2000°N, 30.3500°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- قرية تونس -->
+            <div class="gallery-item">
+                <img src="قرية تونس.jpg" alt="قرية تونس" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">قرية تونس</h3>
+                    <p class="gallery-description">قرية سياحية مشهورة بصناعة الفخار والمناظر الطبيعية الخلابة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.3167,30.8333" target="_blank">29.3167°N, 30.8333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- عين السيلين -->
+            <div class="gallery-item">
+                <img src="عين السيلين.jpeg" alt="عين السيلين" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">عين السيلين</h3>
+                    <p class="gallery-description">منطقة طبيعية تتميز بالينابيع والشلالات الصغيرة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.3167,30.8333" target="_blank">29.3167°N, 30.8333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- مسجد قايتباي -->
+            <div class="gallery-item">
+                <img src="مسجد قايتباي.jpg" alt="مسجد قايتباي" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">مسجد قايتباي</h3>
+                    <p class="gallery-description">مسجد أثري يعود للعصر المملوكي، يتميز بعمارته الإسلامية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.3167,30.8333" target="_blank">29.3167°N, 30.8333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- قصر قارون -->
+            <div class="gallery-item">
+                <img src="قصر قارون (معبد قصر الصاغة).png" alt="قصر قارون" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">قصر قارون</h3>
+                    <p class="gallery-description">معبد فرعوني قديم بالقرب من بحيرة قارون</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.4667,30.6333" target="_blank">29.4667°N, 30.6333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- هرم هوارة -->
+            <div class="gallery-item">
+                <img src="هرم هوارة.jpg" alt="هرم هوارة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">هرم هوارة</h3>
+                    <p class="gallery-description">هرم فرعوني بناه الملك أمنمحات الثالث، يقع جنوب الفيوم</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.2667,30.0333" target="_blank">29.2667°N, 30.0333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- مدينة ماضي الأثرية -->
+            <div class="gallery-item">
+                <img src="مدينة ماضي الأثرية.JPG" alt="مدينة ماضي الأثرية" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">مدينة ماضي الأثرية</h3>
+                    <p class="gallery-description">تحتوي على معابد فرعونية قديمة من عصر الدولة الوسطى</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.3167,30.8333" target="_blank">29.3167°N, 30.8333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- قصر الصاغة -->
+            <div class="gallery-item">
+                <img src="قصر الصاغة.jpg" alt="قصر الصاغة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">قصر الصاغة</h3>
+                    <p class="gallery-description">معبد فرعوني صغير مبني من الحجر الجيري</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.4667,30.6333" target="_blank">29.4667°N, 30.6333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- رحلات السفاري -->
+            <div class="gallery-item">
+                <img src="رحلات السفاري في الصحراء.jpg" alt="رحلات السفاري" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">رحلات السفاري</h3>
+                    <p class="gallery-description">جولات سفاري في المناطق الصحراوية المحيطة بالفيوم</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.2000,30.3500" target="_blank">29.2000°N, 30.3500°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- سوق الفيوم القديم -->
+            <div class="gallery-item">
+                <img src="سوق الفيوم القديم.jpg" alt="سوق الفيوم القديم" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">سوق الفيوم القديم</h3>
+                    <p class="gallery-description">سوق تقليدي لشراء المنتجات المحلية والحرف اليدوية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.3167,30.8333" target="_blank">29.3167°N, 30.8333°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- محمية وادي الريان -->
+            <div class="gallery-item">
+                <img src="محمية وادي الريان الصحراوية.jpg" alt="محمية وادي الريان" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">محمية وادي الريان</h3>
+                    <p class="gallery-description">موطن للحياة البرية مثل الغزال المصري وثعلب الفنك</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.2000,30.3500" target="_blank">29.2000°N, 30.3500°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- حقول الزهور -->
+            <div class="gallery-item">
+                <img src="حقول الزهور في الفيوم.jpg" alt="حقول الزهور" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">حقول الزهور</h3>
+                    <p class="gallery-description">مناطق زراعية واسعة تُزرع فيها الزهور ونباتات الزينة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=29.3167,30.8333" target="_blank">29.3167°N, 30.8333°E</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>عن المشروع</h3>
+                <p>مبادرة تعليمية تهدف إلى تعريف الطلاب بجمال وتاريخ مصر من خلال وسائل تعليمية تفاعلية.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#about" class="footer-link"><i class="fas fa-info-circle"></i> عن الفيوم</a></li>
+                    <li><a href="#gallery" class="footer-link"><i class="fas fa-images"></i> معالم الفيوم</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>معلومات الاتصال</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@discover-egypt.com" class="footer-link"><i class="fas fa-envelope"></i> info@discover-egypt.com</a></li>
+                    <li><a href="tel:+20123456789" class="footer-link"><i class="fas fa-phone"></i> 0123456789</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-map-marker-alt"></i> الفيوم، مصر</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 مدرسة محمد رجب. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // تأثير الظهور التدريجي للأقسام
+            const sections = document.querySelectorAll("section");
+            const fadeInSections = function() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (sectionTop < windowHeight - 100) {
+                        section.style.opacity = "1";
+                        section.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            // تشغيل التأثير عند التحميل وعند التمرير
+            fadeInSections();
+            window.addEventListener("scroll", fadeInSections);
+            
+            // زر العودة للأعلى
+            const backToTopButton = document.querySelector(".back-to-top");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("visible");
+                } else {
+                    backToTopButton.classList.remove("visible");
+                }
+            });
+            
+            backToTopButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+            
+            // تحميل الصور عند الظهور في الشاشة
+            if ('IntersectionObserver' in window) {
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.removeAttribute('loading');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+    </script>
+</body>
+</html>

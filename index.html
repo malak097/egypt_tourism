@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصر كما لم ترها من قبل - بوابة السياحة المصرية</title>
+    <meta name="description" content="اكتشف كنوز مصر من الأهرامات إلى البحر الأحمر، رحلة تفاعلية عبر 27 محافظة مصرية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #079992;
+            --accent: #fa983a;
+            --light: #f5f6fa;
+            --dark: #1e272e;
+            --text: #2f3640;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.19);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* التصميم الجديد للهيدر */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f6b93b, #e58e26);
+            background-clip: text;
+            color: transparent;
+        
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* هيرو سيكشن */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('55555.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url('wave-pattern.png') repeat-x;
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(to right, var(--accent), #e55039);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* بطاقات المحافظات */
+        .provinces-section {
+            padding: 4rem 1rem;
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .provinces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .province-card {
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .province-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .province-name {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            color: white;
+            padding: 1rem;
+            z-index: 2;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .province-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .province-card:hover::before {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+        }
+
+        .province-card:hover .province-name {
+            transform: translateY(0);
+        }
+
+        /* منطقة البحث المحسنة */
+        .search-section {
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #f9f9f9, #eef2f5);
+            position: relative;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .search-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            opacity: 0.1;
+        }
+
+        .search-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .search-description {
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(250, 152, 58, 0.2);
+        }
+
+        .search-button {
+            padding: 0 2rem;
+            font-size: 1.1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* معرض الصور التفاعلي */
+        .gallery-section {
+            padding: 4rem 1rem;
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            aspect-ratio: 16/9;
+            transition: var(--transition);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* قسم الإحصائيات */
+        .stats-section {
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #f6b93b, #fad390);
+            background-clip: text;
+            color: transparent;
+        
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* الفوتر المطور */
+        .main-footer {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 3rem 1rem 1.5rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .footer-link i {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* تأثيرات الحركة */
+        @media (hover: none) {
+            .province-card:hover, .gallery-item:hover, .stat-item:hover {
+                transform: none;
+            }
+            
+            .province-name, .gallery-caption {
+                transform: translateY(0);
+            }
+        }
+
+        /* التجاوب مع الشاشات */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .provinces-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .search-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .provinces-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 1rem;
+            }
+            
+            .province-name {
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+            
+            .search-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-wrapper">
+            <img src="school-logo.png" alt="شعار المدرسة" class="logo">
+            <h1 class="site-title">مصر كما لم ترها من قبل</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                الرئيسية
+            </a>
+           
+            <a href="contact.html" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                اتصل بنا
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">اكتشف عجائب مصر</h1>
+        <p class="hero-subtitle">رحلة تفاعلية عبر 27 محافظة مصرية تزخر بالتاريخ والثقافة والطبيعة الساحرة</p>
+        <button class="cta-button"onclick="scrollToProvinces()">
+            ابدأ الرحلة
+            <i class="fas fa-arrow-left"></i>
+        </button>
+    </section>
+
+    <section class="provinces-section">
+        <div class="section-header">
+            <h2 class="section-title">استكشف محافظات مصر</h2>
+            <p class="section-description">اختر محافظة لاكتشاف معالمها السياحية الفريدة وتاريخها العريق</p>
+        </div>
+        
+        <div class="provinces-grid">
+            <a href="alexandria.html" class="province-card" style="background-image: url('qaitbay.jpeg')">
+                <span class="province-name">الإسكندرية</span>
+            </a>
+            <a href="cairo.html" class="province-card" style="background-image: url('برج القاهرة.jpeg')">
+                <span class="province-name">القاهرة</span>
+            </a>
+            <a href="luxor.html" class="province-card" style="background-image: url('وادي الملوك.jpg')">
+                <span class="province-name">الأقصر</span>
+            </a>
+            <a href="aswan.html" class="province-card" style="background-image: url('Abu_Simbel_Temples.png')">
+                <span class="province-name">أسوان</span>
+            </a>
+            <a href="redsea.html" class="province-card" style="background-image: url('مرسى علم.jpg')">
+                <span class="province-name">البحر الأحمر</span>
+            </a>
+            <a href="dakahlia.html" class="province-card" style="background-image: url('جزيرة الورد.jpeg')">
+                <span class="province-name">الدقهلية</span>
+            </a>
+            <a href="menofia.html" class="province-card" style="background-image: url('حديقة الحيوان بشبين الكوم.jpg')">
+                <span class="province-name">المنوفية</span>
+            </a>
+            <a href="kafrelsheikh.html" class="province-card" style="background-image: url('متحف كفر الشيخ.jpg')">
+                <span class="province-name">كفر الشيخ</span>
+            </a>
+            <a href="assiut.html" class="province-card" style="background-image: url('قصر ألكسان باشا.jpeg')">
+                <span class="province-name">أسيوط</span>
+            </a>
+            <a href="southsinai.html" class="province-card" style="background-image: url('محمية نبق.jpg')">
+                <span class="province-name">جنوب سيناء</span>
+            </a>
+            <a href="newvalley.html" class="province-card" style="background-image: url('الصحراء البيضاء.jpg')">
+                <span class="province-name">الوادي الجديد</span>
+            </a>
+            <a href="giza.html" class="province-card" style="background-image: url('أهرامات الجيزة.jpg')">
+                <span class="province-name">الجيزة</span>
+            </a>
+            <a href="fayoum.html" class="province-card" style="background-image: url('وادي الريان.jpg')">
+                <span class="province-name">الفيوم</span>
+            </a>
+            <a href="minya.html" class="province-card" style="background-image: url('هرم زاوية العريان.jpg')">
+                <span class="province-name">المنيا</span>
+            </a>
+            <a href="gharbia.html" class="province-card" style="background-image: url('حديقة الأندلس (طنطا).jpg')">
+                <span class="province-name">الغربية</span>
+            </a>
+            <a href="sharqia.html" class="province-card" style="background-image: url('istockphoto-1133041459-1024x1024.jpg')">
+                <span class="province-name">الشرقية</span>
+            </a>
+            <a href="benisuef.html" class="province-card" style="background-image: url('معبد إهناسيا المدينة.png')">
+                <span class="province-name">بني سويف</span>
+            </a>
+            <a href="sohag.html" class="province-card" style="background-image: url('متحف سوهاج القومي.jpg')">
+                <span class="province-name">سوهاج</span>
+            </a>
+            <a href="qena.html" class="province-card" style="background-image: url('مقابر جبل الموتى.jpg')">
+                <span class="province-name">قنا</span>
+            </a>
+            <a href="matrouh.html" class="province-card" style="background-image: url('شاطئ الغرام.jpg')">
+                <span class="province-name">مطروح</span>
+            </a>
+            <a href="ismailia.html" class="province-card" style="background-image: url('بيت ديليسبس.jpg')">
+                <span class="province-name">الإسماعيلية</span>
+            </a>
+            <a href="portsaid.html" class="province-card" style="background-image: url('شاطئ بورسعيد.jpg')">
+                <span class="province-name">بورسعيد</span>
+            </a>
+            <a href="suez.html" class="province-card" style="background-image: url('قرية الحجاز السياحية.png')">
+                <span class="province-name">السويس</span>
+            </a>
+            <a href="damietta.html" class="province-card" style="background-image: url('شاطى عزبه البرج.jpg')">
+                <span class="province-name">دمياط</span>
+            </a>
+            <a href="northsinai.html" class="province-card" style="background-image: url('دير\ الوادي\ بطور\ سيناء.webp')">
+                <span class="province-name">شمال سيناء</span>
+            </a>
+            <a href="qalyubia.html" class="province-card" style="background-image: url('قصر محمد علي بشبرا.jpg')">
+                <span class="province-name">القليوبية</span>
+            </a>
+            <a href="beheira.html" class="province-card" style="background-image: url('معبد الاله حورس.jpg')">
+                <span class="province-name">البحيرة</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="search-container">
+            <h2 class="search-title">ابحث عن معلم سياحي</h2>
+            <p class="search-description">اكتشف الآلاف من المعالم الأثرية والطبيعية في جميع أنحاء مصر</p>
+            
+            <form class="search-form" onsubmit="searchLandmark(); return false;">
+                <input type="text" id="searchBox" class="search-input" placeholder="أدخل اسم المعلم أو المنطقة...">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                    بحث
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2 class="section-title">معرض مصر الساحرة</h2>
+            <p class="section-description">لمحات من جمال مصر وتنوعها الثقافي والطبيعي</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="أهرامات الجيزة.jpg" alt="أهرامات الجيزة" class="gallery-image" loading="lazy">
+                <div class="gallery-caption">أهرامات الجيزة - عجائب الدنيا السبع</div>
+            </div>
+            <div class="gallery-item">
+                <img src="MTemple_of_Philae.png" alt="معبد أبو سمبل" class="gallery-image" loading="lazy">
+                <div class="gallery-caption">معبد أبو سمبل - تحفة معمارية</div>
+            </div>
+            <div class="gallery-item">
+                <img src="رأس محمد.jpg" alt="البحر الأحمر" class="gallery-image" loading="lazy">
+                <div class="gallery-caption">شعاب مرجانية في البحر الأحمر</div>
+            </div>
+            <div class="gallery-item">
+                <img src="معبد الكرنك.jpg" alt="معبد الكرنك" class="gallery-image" loading="lazy">
+                <div class="gallery-caption">معبد الكرنك بالأقصر</div>
+            </div>
+            <div class="gallery-item">
+                <img src="واحة سيوة.jpg" alt="واحة سيوة" class="gallery-image" loading="lazy">
+                <div class="gallery-caption">واحة سيوة - جوهرة الصحراء</div>
+            </div>
+            <div class="gallery-item">
+                <img src="قلعه صلاح الدين.jpg" alt="قلعة صلاح الدين" class="gallery-image" loading="lazy">
+                <div class="gallery-caption">قلعة صلاح الدين بالقاهرة</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="section-header">
+            <h2 class="section-title" style="color: white;">مصر في أرقام</h2>
+            <p class="section-description" style="color: #eee; max-width: 800px;">إحصائيات تبرز مكانة مصر كوجهة سياحية عالمية</p>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">7,000+</div>
+                <div class="stat-label">سنة من التاريخ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">27</div>
+                <div class="stat-label">محافظة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">معلم أثري رئيسي</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">13M</div>
+                <div class="stat-label">سائح سنوياً</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>عن المشروع</h3>
+                <p>مبادرة تعليمية تهدف إلى تعريف الطلاب بجمال وتاريخ مصر العريق من خلال وسائل تعليمية تفاعلية.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html" class="footer-link"><i class="fas fa-info-circle"></i> عن المشروع</a></li>
+                    <li><a href="map.html" class="footer-link"><i class="fas fa-map-marked-alt"></i> خريطة مصر</a></li>
+                    <li><a href="resources.html" class="footer-link"><i class="fas fa-book"></i> مصادر تعليمية</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>اتصل بنا</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@egypt-edu.com" class="footer-link"><i class="fas fa-envelope"></i> info@egypt-edu.com</a></li>
+                    <li><a href="tel:+20123456789" class="footer-link"><i class="fas fa-phone"></i> 0123456789</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 مدرسة محمد رجب. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+         function scrollToProvinces() {
+            const provincesSection = document.querySelector('.provinces-section');
+            provincesSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // إضافة تأثير اهتزاز لفتح الانتباه
+            provincesSection.style.animation = 'highlight 1.5s';
+            setTimeout(() => {
+                provincesSection.style.animation = '';
+            }, 1500);
+        }
+
+        // إضافة تأثير الاهتزاز في CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes highlight {
+                0% { transform: translateY(0); }
+                20% { transform: translateY(-10px); }
+                40% { transform: translateY(10px); }
+                60% { transform: translateY(-7px); }
+                80% { transform: translateY(7px); }
+                100% { transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+
+        function searchLandmark() {
+            const query = document.getElementById("searchBox").value.trim();
+            if (query) {
+                // تأثيرات بصرية عند البحث
+                const searchForm = document.querySelector('.search-form');
+                searchForm.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    searchForm.style.transform = 'scale(1)';
+                }, 200);
+                
+                // يمكن استبدال هذا بتنفيذ البحث الفعلي
+                setTimeout(() => {
+                    alert(`سيتم البحث عن: "${query}"`);
+                    // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                }, 300);
+            } else {
+                alert("الرجاء إدخال كلمة للبحث");
+                document.getElementById("searchBox").focus();
+            }
+        }
+        
+        // تحميل الصور عند الظهور في الشاشة
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.removeAttribute('loading');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+        
+        // تأثيرات عند التمرير
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0.5rem 1rem';
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.2)';
+            } else {
+                header.style.padding = '1rem 2rem';
+                header.style.boxShadow = 'var(--shadow-md)';
+            }
+        });
+    </script>
+</body>
+</html> 

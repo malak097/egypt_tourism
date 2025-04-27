@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسوان - أرض السحر والجمال | مصر كما لم ترها من قبل</title>
+    <meta name="description" content="اكتشف جمال أسوان من معابد أبو سمبل إلى جزيرة الفنتين، دليل شامل لأهم المعالم السياحية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #079992;
+            --accent: #e58e26;
+            --light: #f5f6fa;
+            --dark: #1e272e;
+            --text: #2f3640;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.16);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.19);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر المعدل */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f6b93b, #fad390);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* هيرو سيكشن خاص بأسوان */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('اسوان.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url('wave-pattern.png') repeat-x;
+            opacity: 0.3;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* قسم المحتوى الرئيسي */
+        .content-section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* معرض الصور المعدل */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .gallery-gps {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-gps a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .gallery-gps i {
+            font-size: 0.8rem;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* الفوتر */
+        .main-footer {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 3rem 1rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .footer-link i {
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* تأثيرات الحركة */
+        @media (hover: none) {
+            .gallery-item:hover {
+                transform: none;
+            }
+            
+            .gallery-content {
+                transform: translateY(0);
+                background: rgba(0,0,0,0.7);
+            }
+        }
+
+        /* التجاوب مع الشاشات */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-content {
+                padding: 1rem;
+            }
+            
+            .gallery-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-wrapper">
+            <img src="school-logo.png" alt="شعار المدرسة" class="logo">
+            <h1 class="site-title">أسوان - أرض السحر والجمال</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i>
+                الرئيسية
+            </a>
+            <a href="#gallery" class="nav-link">
+                <i class="fas fa-images"></i>
+                المعالم
+            </a>
+            <a href="#about" class="nav-link">
+                <i class="fas fa-info-circle"></i>
+                عن أسوان
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title">أسوان</h1>
+        <p class="hero-subtitle">حيث يلتقي سحر الطبيعة بعظمة الحضارة على ضفاف النيل</p>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">عن أسوان</h2>
+            <p class="section-description">جوهرة الجنوب حيث الشمس الدافئة والتاريخ العريق</p>
+        </div>
+        
+        <div class="about-content">
+            <p>تقع أسوان في أقصى جنوب مصر وتعتبر بوابة مصر إلى أفريقيا. اشتهرت منذ القدم بموقعها الاستراتيجي على النيل وكونها مركزاً تجارياً مهماً. تتميز أسوان بمناخها الجاف الدافئ طوال العام، مما يجعلها وجهة سياحية ممتازة خاصة في فصل الشتاء.</p>
+            <br>
+            <p>تزخر أسوان بالعديد من المعالم الأثرية الفريدة مثل معابد أبو سمبل وفيلة، بالإضافة إلى الطبيعة الخلابة للجزر النيلية والسد العالي الذي يعد تحفة هندسية. كما تشتهر أسوان بالثقافة النوبية الفريدة والفنون التقليدية والحرف اليدوية المميزة.</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">معالم أسوان</h2>
+            <p class="section-description">اكتشف أهم المواقع السياحية والأثرية في جوهرة الجنوب</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <!-- معبد فيلة -->
+            <div class="gallery-item">
+                <img src="MTemple_of_Philae.png" alt="معبد فيلة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">معبد فيلة</h3>
+                    <p class="gallery-description">معبد مخصص لعبادة الإلهة إيزيس، تم نقله إلى جزيرة أجيليكا لإنقاذه من الغرق</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0251,32.8842" target="_blank">24.0251°N, 32.8842°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- معابد أبو سمبل -->
+            <div class="gallery-item">
+                <img src="Abu_Simbel_Temples.png" alt="معابد أبو سمبل" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">معابد أبو سمبل</h3>
+                    <p class="gallery-description">معابد ضخمة منحوتة في الصخر بناها رمسيس الثاني، تم نقلها عام 1968 لإنقاذها من الغرق</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=22.3369,31.6257" target="_blank">22.3369°N, 31.6257°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- متحف النوبة -->
+            <div class="gallery-item">
+                <img src="Nubian_Museum.png" alt="متحف النوبة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">متحف النوبة</h3>
+                    <p class="gallery-description">يعرض تاريخ وثقافة النوبة من عصور ما قبل التاريخ حتى العصر الحديث</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8997" target="_blank">24.0889°N, 32.8997°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- المسلة الناقصة -->
+            <div class="gallery-item">
+                <img src="Abu_Simbel_Temples.png" alt="المسلة الناقصة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">المسلة الناقصة</h3>
+                    <p class="gallery-description">مسلة ضخمة لم تكتمل، توضح تقنيات المصريين القدماء في قطع الجرانيت</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0806,32.8914" target="_blank">24.0806°N, 32.8914°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- معبد كلابشة -->
+            <div class="gallery-item">
+                <img src="kalabsha_temple_in_aswan.jpg" alt="معبد كلابشة" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">معبد كلابشة</h3>
+                    <p class="gallery-description">معبد روماني مخصص للإله ماندوليس، تم نقله من موقعه الأصلي عام 1962</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=23.9625,32.8672" target="_blank">23.9625°N, 32.8672°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- جزيرة الفنتين -->
+            <div class="gallery-item">
+                <img src="0yrtpd3hxsey.jpg" alt="جزيرة الفنتين" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">جزيرة الفنتين</h3>
+                    <p class="gallery-description">جزيرة تاريخية تضم متحف أسوان وآثاراً فرعونية ومناظر طبيعية خلابة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- جزيرة النباتات -->
+            <div class="gallery-item">
+                <img src="جزيرة-النباتات-في-اسوان.jpg" alt="جزيرة النباتات" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">جزيرة النباتات</h3>
+                    <p class="gallery-description">حديقة نباتية طبيعية تضم أنواعاً نادرة من النباتات الاستوائية والنخيل</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- جزيرة هيسا -->
+            <div class="gallery-item">
+                <img src="116129120_3195417583885208_8576076577047004542_n.jpg" alt="جزيرة هيسا" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">جزيرة هيسا</h3>
+                    <p class="gallery-description">جزيرة نوبية تتميز بالبيوت الملونة والثقافة النوبية الأصيلة</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- بحيرة ناصر -->
+            <div class="gallery-item">
+                <img src="th.jpeg" alt="بحيرة ناصر" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">بحيرة ناصر</h3>
+                    <p class="gallery-description">أكبر بحيرة صناعية في العالم، تشكلت بعد بناء السد العالي</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=22.5000,31.7500" target="_blank">22.5000°N, 31.7500°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- محمية سالوجا وغزال -->
+            <div class="gallery-item">
+                <img src="b1980feb-7114-4425-b48e-3eee5ecf29c3_sm.jpg" alt="محمية سالوجا وغزال" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">محمية سالوجا وغزال</h3>
+                    <p class="gallery-description">محمية طبيعية تضم أنواعاً نادرة من الطيور والنباتات النيلية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- السد العالي -->
+            <div class="gallery-item">
+                <img src="121-185359-egypt-high-dam-60-years_700x400.jpeg" alt="السد العالي" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">السد العالي</h3>
+                    <p class="gallery-description">مشروع قومي ضخم يحمي مصر من الفيضانات ويوفر الطاقة الكهربائية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=23.9697,32.8828" target="_blank">23.9697°N, 32.8828°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- القرية النوبية -->
+            <div class="gallery-item">
+                <img src="144541.jpg" alt="القرية النوبية" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">القرية النوبية</h3>
+                    <p class="gallery-description">مجمع للبيوت النوبية التقليدية يعرض نمط الحياة والثقافة النوبية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- السوق السياحي -->
+            <div class="gallery-item">
+                <img src="315516-مدخل-السوق-السياحى.jpeg" alt="السوق السياحي" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">السوق السياحي</h3>
+                    <p class="gallery-description">سوق تقليدي يبيع المنتجات النوبية والتوابل والهدايا التذكارية</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- قبة الهوا -->
+            <div class="gallery-item">
+                <img src="84872-قبة-الهوا.jpg" alt="قبة الهوا" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">قبة الهوا</h3>
+                    <p class="gallery-description">مقابر منحوتة في الصخر تعود لعصر الدولة القديمة والوسطى</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- دير القديس سمعان -->
+            <div class="gallery-item">
+                <img src="1200px-Church_of_Saint_Simeon_Stylites_17.jpg" alt="دير القديس سمعان" class="gallery-image" loading="lazy">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">دير القديس سمعان</h3>
+                    <p class="gallery-description">دير قبطي قديم يعود للقرن السابع الميلادي، مبني من الطوب اللبن</p>
+                    <span class="gallery-gps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=24.0889,32.8833" target="_blank">24.0889°N, 32.8833°E</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>عن المشروع</h3>
+                <p>مبادرة تعليمية تهدف إلى تعريف الطلاب بجمال وتاريخ مصر من خلال وسائل تعليمية تفاعلية.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#about" class="footer-link"><i class="fas fa-info-circle"></i> عن أسوان</a></li>
+                    <li><a href="#gallery" class="footer-link"><i class="fas fa-images"></i> معالم أسوان</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>معلومات الاتصال</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:info@discover-egypt.com" class="footer-link"><i class="fas fa-envelope"></i> info@discover-egypt.com</a></li>
+                    <li><a href="tel:+20123456789" class="footer-link"><i class="fas fa-phone"></i> 0123456789</a></li>
+                    <li><a href="#" class="footer-link"><i class="fas fa-map-marker-alt"></i> أسوان، مصر</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 مدرسة محمد رجب. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // تأثير الظهور التدريجي للأقسام
+            const sections = document.querySelectorAll("section");
+            const fadeInSections = function() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (sectionTop < windowHeight - 100) {
+                        section.style.opacity = "1";
+                        section.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            // تشغيل التأثير عند التحميل وعند التمرير
+            fadeInSections();
+            window.addEventListener("scroll", fadeInSections);
+            
+            // زر العودة للأعلى
+            const backToTopButton = document.querySelector(".back-to-top");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("visible");
+                } else {
+                    backToTopButton.classList.remove("visible");
+                }
+            });
+            
+            backToTopButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+            
+            // تحميل الصور عند الظهور في الشاشة
+            if ('IntersectionObserver' in window) {
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.removeAttribute('loading');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+    </script>
+</body>
+</html>
