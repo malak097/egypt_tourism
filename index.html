@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x1z5l5e5c5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <style>
         :root {
             --primary: #0a3d62;
@@ -37,7 +38,7 @@
             overflow-x: hidden;
         }
 
-        /* التصميم الجديد للهيدر */
+        /* تحسينات الهيدر */
         .main-header {
             background: linear-gradient(135deg, var(--primary), var(--dark));
             color: white;
@@ -63,6 +64,111 @@
             height: 50px;
             object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: rotate(15deg);
+        }
+
+        /* تنسيق اللوجو الجديد */
+        .mk-logo {
+            position: relative;
+            background: linear-gradient(135deg, rgba(10, 61, 98, 0.9), rgba(30, 39, 46, 0.9));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            margin-left: 1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+        }
+
+        .mk-logo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent, transparent, 
+                rgba(250, 152, 58, 0.1), 
+                transparent
+            );
+            transform: rotate(30deg);
+            transition: all 0.8s ease;
+        }
+
+        .mk-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .mk-logo:hover::before {
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+        .mk-logo-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mk-logo-main {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(to right, #f6b93b, #fad390);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .mk-logo-sub {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            text-align: center;
+            margin-top: 0.3rem;
+            color: #f5f6fa;
+            font-weight: 500;
+        }
+
+        .mk-logo-badge {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: var(--accent);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         .site-title {
@@ -71,7 +177,6 @@
             background: linear-gradient(to right, #f6b93b, #e58e26);
             background-clip: text;
             color: transparent;
-        
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -99,11 +204,7 @@
             transform: translateY(-2px);
         }
 
-        .nav-link i {
-            font-size: 1.1rem;
-        }
-
-        /* هيرو سيكشن */
+        /* قسم الهيرو */
         .hero {
             height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('55555.jpg') center/cover no-repeat;
@@ -275,7 +376,7 @@
             transform: translateY(0);
         }
 
-        /* منطقة البحث المحسنة */
+        /* منطقة البحث */
         .search-section {
             padding: 4rem 1rem;
             background: linear-gradient(135deg, #f9f9f9, #eef2f5);
@@ -360,7 +461,7 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* معرض الصور التفاعلي */
+        /* معرض الصور */
         .gallery-section {
             padding: 4rem 1rem;
             background-color: white;
@@ -451,7 +552,6 @@
             background: linear-gradient(to right, #f6b93b, #fad390);
             background-clip: text;
             color: transparent;
-        
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -461,7 +561,7 @@
             opacity: 0.9;
         }
 
-        /* الفوتر المطور */
+        /* الفوتر مع اللوجو الجديد */
         .main-footer {
             background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
@@ -541,6 +641,59 @@
             transform: translateY(-3px);
         }
 
+        /* لوجو MK في الفوتر */
+        .footer-mk-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            border: 1px dashed rgba(255,255,255,0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .footer-mk-logo:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .footer-mk-main {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f6b93b, #e58e26);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-mk-sub {
+            font-size: 1rem;
+            color: white;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .footer-mk-desc {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .footer-mk-logo:hover .footer-mk-main {
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
         .copyright {
             text-align: center;
             margin-top: 3rem;
@@ -612,6 +765,15 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            .mk-logo {
+                margin: 0.5rem 0;
+                padding: 0.6rem 1rem;
+            }
+            
+            .mk-logo-main {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -637,6 +799,18 @@
             .search-container {
                 padding: 1.5rem;
             }
+            
+            .mk-logo {
+                padding: 0.5rem;
+            }
+            
+            .mk-logo-main {
+                font-size: 1.2rem;
+            }
+            
+            .mk-logo-sub {
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
@@ -644,6 +818,16 @@
     <header class="main-header">
         <div class="logo-wrapper">
             <img src="school-logo.png" alt="شعار المدرسة" class="logo">
+            
+            <!-- اللوجو الجديد في الهيدر -->
+            <div class="My_Logo.png" onclick="showMkInfo()">
+                <div class="mk-logo-badge">LOKa🌷</div>
+                <div class="mk-logo-inner">
+                    <span class="mk-logo-main">MK</span>
+                    <span class="mk-logo-sub">Computer Department</span>
+                </div>
+            </div>
+            
             <h1 class="site-title">مصر كما لم ترها من قبل</h1>
         </div>
         <nav class="nav-links">
@@ -651,7 +835,6 @@
                 <i class="fas fa-home"></i>
                 الرئيسية
             </a>
-           
             <a href="contact.html" class="nav-link">
                 <i class="fas fa-envelope"></i>
                 اتصل بنا
@@ -662,7 +845,7 @@
     <section class="hero">
         <h1 class="hero-title">اكتشف عجائب مصر</h1>
         <p class="hero-subtitle">رحلة تفاعلية عبر 27 محافظة مصرية تزخر بالتاريخ والثقافة والطبيعة الساحرة</p>
-        <button class="cta-button"onclick="scrollToProvinces()">
+        <button class="cta-button" onclick="scrollToProvinces()">
             ابدأ الرحلة
             <i class="fas fa-arrow-left"></i>
         </button>
@@ -858,12 +1041,12 @@
             </div>
             
             <div class="footer-column">
-                <h3>اتصل بنا</h3>
-                <ul class="footer-links">
-                    <li><a href="mailto:info@egypt-edu.com" class="footer-link"><i class="fas fa-envelope"></i> info@egypt-edu.com</a></li>
-                    <li><a href="tel:+20123456789" class="footer-link"><i class="fas fa-phone"></i> 0123456789</a></li>
-                    <li><a href="#" class="footer-link"><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</a></li>
-                </ul>
+                <h3>التطوير التقني</h3>
+                <div class="footer-mk-logo" onclick="showMkInfo()">
+                    <div class="footer-mk-main">MK</div>
+                    <div class="footer-mk-sub">Computer Department</div>
+                    <div class="footer-mk-desc">حلول تقنية متكاملة لمواقع الويب</div>
+                </div>
             </div>
         </div>
         
@@ -872,76 +1055,75 @@
         </div>
     </footer>
 
+    <!-- مكتبة SweetAlert2 للنوافذ المنبثقة -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script>
-         function scrollToProvinces() {
-            const provincesSection = document.querySelector('.provinces-section');
-            provincesSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        // وظيفة عرض معلومات قسم MK
+        function showMkInfo() {
+            Swal.fire({
+                title: 'MK Computer Department',
+                html: `
+                    <div style="text-align: right; direction: rtl;">
+                        <div style="
+                            background: linear-gradient(135deg, #0a3d62, #1e272e);
+                            color: white;
+                            padding: 1.5rem;
+                            border-radius: 12px;
+                            margin-bottom: 1rem;
+                            text-align: center;
+                        ">
+                            <div style="
+                                font-size: 3rem;
+                                font-weight: bold;
+                                background: linear-gradient(to right, #f6b93b, #fad390);
+                                background-clip: text;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                margin-bottom: 0.5rem;
+                            ">MK</div>
+                            <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">Computer Department</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">التميز التقني في تصميم الويب</div>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <p style="font-weight: bold; color: #0a3d62; margin-bottom: 0.5rem;">📌 <strong>خدماتنا:</strong></p>
+                            <ul style="padding-right: 1rem;">
+                                <li>تصميم وتطوير المواقع الإلكترونية</li>
+                                <li>حلول برمجية متكاملة</li>
+                                <li>تصميم واجهات المستخدم (UI/UX)</li>
+                                <li>أنظمة إدارة المحتوى (CMS)</li>
+                                <li>استضافة المواقع وحلول السيرفرات</li>
+                                <li>تصميم : ملك محمد عبداللطيف</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                icon: 'info',
+                confirmButtonText: 'حسنًا',
+                background: '#f5f6fa',
+                confirmButtonColor: '#0a3d62',
+                width: '600px'
             });
-            
-            // إضافة تأثير اهتزاز لفتح الانتباه
-            provincesSection.style.animation = 'highlight 1.5s';
-            setTimeout(() => {
-                provincesSection.style.animation = '';
-            }, 1500);
         }
 
-        // إضافة تأثير الاهتزاز في CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes highlight {
-                0% { transform: translateY(0); }
-                20% { transform: translateY(-10px); }
-                40% { transform: translateY(10px); }
-                60% { transform: translateY(-7px); }
-                80% { transform: translateY(7px); }
-                100% { transform: translateY(0); }
-            }
-        `;
-        document.head.appendChild(style);
-
+        function scrollToProvinces() {
+            const provincesSection = document.querySelector('.provinces-section');
+            provincesSection.scrollIntoView({ behavior: 'smooth' });
+        }
 
         function searchLandmark() {
             const query = document.getElementById("searchBox").value.trim();
             if (query) {
-                // تأثيرات بصرية عند البحث
-                const searchForm = document.querySelector('.search-form');
-                searchForm.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    searchForm.style.transform = 'scale(1)';
-                }, 200);
-                
-                // يمكن استبدال هذا بتنفيذ البحث الفعلي
-                setTimeout(() => {
-                    alert(`سيتم البحث عن: "${query}"`);
-                    // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                }, 300);
+                alert(`سيتم البحث عن: "${query}"`);
+                // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
             } else {
                 alert("الرجاء إدخال كلمة للبحث");
                 document.getElementById("searchBox").focus();
             }
         }
         
-        // تحميل الصور عند الظهور في الشاشة
-        if ('IntersectionObserver' in window) {
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.removeAttribute('loading');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-            
-            lazyImages.forEach(img => imageObserver.observe(img));
-        }
-        
-        // تأثيرات عند التمرير
+        // تأثيرات التمرير
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.main-header');
             if (window.scrollY > 100) {
@@ -954,4 +1136,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
